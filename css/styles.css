@@ -12,7 +12,7 @@ body {
 
 .heart {
   --size: 200px;
-  background: red;
+  background: #e61a1a;
   width: var(--size);
   height: var(--size);
   position: relative;
@@ -26,6 +26,8 @@ body {
   animation-timing-function: ease-in;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg); }
@@ -41,5 +43,16 @@ body {
     top: 0;
     right: -50%; }
   .heart:hover {
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused; }
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    background: red; }
+
+@-webkit-keyframes beat {
+  to {
+    -webkit-transform: rotate(-45deg) scale(1.2);
+    transform: rotate(-45deg) scale(1.2); } }
+
+@keyframes beat {
+  to {
+    -webkit-transform: rotate(-45deg) scale(1.2);
+    transform: rotate(-45deg) scale(1.2); } }
